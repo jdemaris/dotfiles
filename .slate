@@ -1,0 +1,34 @@
+# This is the default .slate file.
+# If no ~/.slate file exists this is the file that will be used.
+
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+# Throw Bindings to move the current window to a different screen
+bind 1:ctrl;alt         throw 0 resize
+bind 2:ctrl;alt         throw 1 resize
+bind 3:ctrl;alt         throw 2 resize
+
+# Arrangement bindings to place the window in various quarters, halfs or full screen positions
+bind l:ctrl;alt;cmd    move screenOriginX+(screenSizeX/2);0 screenSizeX/2;screenSizeY
+bind j:ctrl;alt;cmd    move screenOriginX+0;0 screenSizeX/2;screenSizeY
+bind i:ctrl;alt;cmd    move screenOriginX+0;0 screenSizeX;screenSizeY/2
+bind ,:ctrl;alt;cmd    move screenOriginX+0;screenOriginY+(screenSizeY/2) screenSizeX;screenSizeY/2
+bind u:ctrl;alt;cmd    move screenOriginX+0;screenOriginY screenSizeX/2;screenSizeY/2
+bind o:ctrl;alt;cmd    move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2
+bind m:ctrl;alt;cmd    move screenOriginX+0;screenOriginY+(screenSizeY/2) screenSizeX/2;screenSizeY/2
+bind .:ctrl;alt;cmd    move screenOriginX+screenSizeX/2;screenOriginY+(screenSizeY/2) screenSizeX/2;screenSizeY/2
+bind k:ctrl;alt;cmd    move screenOriginX;screenOriginY screenSizeX;screenSizeY
+
+# Focus bindings to change which window currently has focus
+bind w:ctrl;alt;cmd   focus up
+bind a:ctrl;alt;cmd   focus left
+bind s:ctrl;alt;cmd   focus down
+bind d:ctrl;alt;cmd   focus right
+
+# Focus Bindings
+bind up:cmd       focus up
+bind down:cmd     focus down
+bind up:cmd;alt   focus behind
+
